@@ -2,13 +2,30 @@ import { NextResponse } from "next/server";
 import { DateTime } from "luxon";
 
 const APP_BASE_URL = "https://api.appbarber.com.br/horarios";
+const HUDSON_ID = "5784967";
+const DAVID_ID = "6616017";
+const EDUARDO_ID = "5786381";
 const USERS = [
   {
     name: "Wendell P. Barreto",
     id: "0dc056653128189eb8ce58aa1d798bd3",
     cliente: "7008371",
-    usuario: "5784967",
-    profissional: "5784967",
+    usuario: HUDSON_ID,
+    profissional: HUDSON_ID,
+  },
+  {
+    name: "Adam Neves",
+    id: "2c036732a2489a5dd3c238b4d4d02567",
+    cliente: "7130226",
+    usuario: DAVID_ID,
+    profissional: DAVID_ID,
+  },
+  {
+    name: "Milton Alves",
+    id: "5d1fe8ef87c67d159d97d51e48da4724",
+    cliente: "7006215",
+    usuario: EDUARDO_ID,
+    profissional: EDUARDO_ID,
   },
 ];
 
