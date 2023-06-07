@@ -15,18 +15,19 @@ const USERS = [
   },
   {
     name: "Adam Neves",
-    id: "2c036732a2489a5dd3c238b4d4d02567",
+    id: "e182b45937ddcc72bdff90e24a18d943",
     cliente: "7130226",
-    usuario: DAVID_ID,
-    profissional: DAVID_ID,
-  },
-  {
-    name: "Milton Alves",
-    id: "5d1fe8ef87c67d159d97d51e48da4724",
-    cliente: "7006215",
     usuario: EDUARDO_ID,
     profissional: EDUARDO_ID,
+    hora: "12:00",
   },
+  // {
+  //   name: "Milton Alves",
+  //   id: "5d1fe8ef87c67d159d97d51e48da4724",
+  //   cliente: "7006215",
+  //   usuario: EDUARDO_ID,
+  //   profissional: EDUARDO_ID,
+  // },
 ];
 
 export async function POST(req) {
