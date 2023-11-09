@@ -3,8 +3,6 @@ import { DateTime } from "luxon";
 
 const APP_BASE_URL = "https://api.appbarber.com.br/horarios";
 const HUDSON_ID = "5784967";
-const DAVID_ID = "6616017";
-const EDUARDO_ID = "5786381";
 const USERS = [
   {
     name: "Wendell P. Barreto",
@@ -13,31 +11,16 @@ const USERS = [
     usuario: HUDSON_ID,
     profissional: HUDSON_ID,
   },
-  {
-    name: "Adam Neves",
-    id: "e182b45937ddcc72bdff90e24a18d943",
-    cliente: "7130226",
-    usuario: EDUARDO_ID,
-    profissional: EDUARDO_ID,
-    hora: "12:00",
-  },
-  // {
-  //   name: "Milton Alves",
-  //   id: "5d1fe8ef87c67d159d97d51e48da4724",
-  //   cliente: "7006215",
-  //   usuario: EDUARDO_ID,
-  //   profissional: EDUARDO_ID,
-  // },
 ];
 
 export async function POST(req) {
-  const nextFriday = DateTime.now()
+  const nextThursday = DateTime.now()
     .setZone("America/Sao_Paulo")
     .endOf("week")
     .plus({ weeks: 1 })
-    .minus({ days: 2 });
-  const nextFridayPlus1Week = nextFriday.plus({ weeks: 1 });
-  const dates = [nextFriday, nextFridayPlus1Week];
+    .minus({ days: 3 });
+  const nextThursdayPlus1Week = nextThursday.plus({ weeks: 1 });
+  const dates = [nextThursday, nextThursdayPlus1Week];
   let results = [];
 
   for (const user of USERS) {
