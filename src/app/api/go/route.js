@@ -24,7 +24,7 @@ export async function POST(req) {
   let results = [];
 
   // Custom for reveillon
-  await fetch(APP_BASE_URL, {
+  const resCustom = await fetch(APP_BASE_URL, {
     method: "POST",
     headers: {
       Accept: "application/json",
@@ -40,6 +40,11 @@ export async function POST(req) {
       ...USERS[0],
     }),
   });
+  const resCustomResult = await resCustom.json();
+  results.push({
+    ...USERS[0],
+    result: resCustomResult,
+  })
 
   for (const user of USERS) {
     let dateResults = [];
@@ -72,7 +77,5 @@ export async function POST(req) {
     });
   }
 
-  return NextResponse.json({
-    results,
-  });
+  return NextResponse.json(results);
 }
