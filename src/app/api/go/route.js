@@ -37,7 +37,7 @@ export async function POST(req) {
       hora: "11:00",
       origem: 4,
       obs: "",
-      ...user,
+      ...USERS[0],
     }),
   });
 
