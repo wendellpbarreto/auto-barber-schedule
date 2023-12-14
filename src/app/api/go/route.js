@@ -23,6 +23,24 @@ export async function POST(req) {
   const dates = [nextThursday, nextThursdayPlus1Week];
   let results = [];
 
+  // Custom for reveillon
+  await fetch(APP_BASE_URL, {
+    method: "POST",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      api_key: "TcskrU3Ejze.6",
+      servico: "379482",
+      dia: "2023-12-30",
+      hora: "11:00",
+      origem: 4,
+      obs: "",
+      ...user,
+    }),
+  });
+
   for (const user of USERS) {
     let dateResults = [];
     for (const date of dates) {
