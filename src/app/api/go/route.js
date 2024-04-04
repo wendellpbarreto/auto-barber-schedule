@@ -34,7 +34,7 @@ export async function POST(req) {
       api_key: "TcskrU3Ejze.6",
       servico: "379482",
       dia: "2023-12-30",
-      hora: "11:00",
+      hora: "09:30",
       origem: 4,
       obs: "",
       ...USERS[0],
