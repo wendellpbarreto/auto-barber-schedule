@@ -59,7 +59,7 @@ export async function POST(req) {
           api_key: "TcskrU3Ejze.6",
           servico: "379482",
           dia: date.toFormat("yyyy-M-d"),
-          hora: "13:00",
+          hora: "09:30",
           origem: 4,
           obs: "",
           ...user,
