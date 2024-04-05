@@ -24,27 +24,27 @@ export async function POST(req) {
   let results = [];
 
   // Custom for reveillon
-  const resCustom = await fetch(APP_BASE_URL, {
-    method: "POST",
-    headers: {
-      Accept: "application/json",
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      api_key: "TcskrU3Ejze.6",
-      servico: "379482",
-      dia: "2023-12-30",
-      hora: "09:30",
-      origem: 4,
-      obs: "",
-      ...USERS[0],
-    }),
-  });
-  const resCustomResult = await resCustom.json();
-  results.push({
-    ...USERS[0],
-    result: resCustomResult,
-  })
+  // const resCustom = await fetch(APP_BASE_URL, {
+  //   method: "POST",
+  //   headers: {
+  //     Accept: "application/json",
+  //     "Content-Type": "application/json",
+  //   },
+  //   body: JSON.stringify({
+  //     api_key: "TcskrU3Ejze.6",
+  //     servico: "379482",
+  //     dia: "2023-12-30",
+  //     hora: "09:30",
+  //     origem: 4,
+  //     obs: "",
+  //     ...USERS[0],
+  //   }),
+  // });
+  // const resCustomResult = await resCustom.json();
+  // results.push({
+  //   ...USERS[0],
+  //   result: resCustomResult,
+  // })
 
   for (const user of USERS) {
     let dateResults = [];
