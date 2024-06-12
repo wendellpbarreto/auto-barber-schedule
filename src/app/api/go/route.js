@@ -10,17 +10,19 @@ const USERS = [
     cliente: "7008371",
     usuario: HUDSON_ID,
     profissional: HUDSON_ID,
+    minusDays: 3,
+  },
+  {
+    name: "Milton Alves",
+    id: "0ee54281f50a0accd61d7eb77294f983",
+    cliente: "7006215",
+    usuario: HUDSON_ID,
+    profissional: HUDSON_ID,
+    minusDays: 1,
   },
 ];
 
 export async function POST(req) {
-  const nextThursday = DateTime.now()
-    .setZone("America/Sao_Paulo")
-    .endOf("week")
-    .plus({ weeks: 1 })
-    .minus({ days: 3 });
-  const nextThursdayPlus1Week = nextThursday.plus({ weeks: 1 });
-  const dates = [nextThursday, nextThursdayPlus1Week];
   let results = [];
 
   // Custom for reveillon
@@ -47,28 +49,37 @@ export async function POST(req) {
   // })
 
   for (const user of USERS) {
+    const nextDay = DateTime.now()
+      .setZone("America/Sao_Paulo")
+      .endOf("week")
+      .plus({ weeks: 1 })
+      .minus({ days: user.minusDays });
+    const nextDayPlus1Week = nextDay.plus({ weeks: 1 });
+    const dates = [nextDay, nextDayPlus1Week];
     let dateResults = [];
+
     for (const date of dates) {
+      const data = {
+        api_key: "TcskrU3Ejze.6",
+        servico: "379482",
+        dia: date.toFormat("yyyy-M-d"),
+        hora: "09:00",
+        origem: 4,
+        obs: "",
+        ...user,
+      };
       const res = await fetch(APP_BASE_URL, {
         method: "POST",
         headers: {
           Accept: "application/json",
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({
-          api_key: "TcskrU3Ejze.6",
-          servico: "379482",
-          dia: date.toFormat("yyyy-M-d"),
-          hora: "09:00",
-          origem: 4,
-          obs: "",
-          ...user,
-        }),
+        body: JSON.stringify(data),
       });
 
       const result = await res.json();
 
-      dateResults.push(result);
+      dateResults.push({ result, ...data });
     }
 
     results.push({
