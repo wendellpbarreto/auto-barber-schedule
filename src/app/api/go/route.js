@@ -11,6 +11,7 @@ const USERS = [
     usuario: HUDSON_ID,
     profissional: HUDSON_ID,
     minusDays: 3,
+    hour: "09:00",
   },
   {
     name: "Milton Alves",
@@ -18,7 +19,8 @@ const USERS = [
     cliente: "7006215",
     usuario: HUDSON_ID,
     profissional: HUDSON_ID,
-    minusDays: 1,
+    minusDays: 3,
+    hour: "17:30"
   },
 ];
 
@@ -63,7 +65,7 @@ export async function POST(req) {
         api_key: "TcskrU3Ejze.6",
         servico: "379482",
         dia: date.toFormat("yyyy-M-d"),
-        hora: "09:00",
+        hora: user.hour,
         origem: 4,
         obs: "",
         ...user,
