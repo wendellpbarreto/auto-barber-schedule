@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import { DateTime } from "luxon";
 
 const APP_BASE_URL = "https://api.appbarber.com.br/horarios";
-const HUDSON_ID = "5784967";
+const HUDSON_ID = "7797103";
 const USERS = [
   {
     name: "Wendell P. Barreto",
