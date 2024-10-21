@@ -2,8 +2,8 @@ import { NextResponse } from "next/server";
 import { DateTime } from "luxon";
 
 const APP_BASE_URL = "https://api.appbarber.com.br/horarios";
-const HUDSON_ID = "5784967" ;
-const CLEWERTON_ID=""
+const HUDSON_ID = "5784967";
+const CLEWERTON_ID = "7797103";
 const USERS = [
   {
     name: "Wendell P. Barreto",
@@ -18,8 +18,8 @@ const USERS = [
     name: "Milton Alves",
     id: "0ee54281f50a0accd61d7eb77294f983",
     cliente: "7006215",
-    usuario: HUDSON_ID,
-    profissional: HUDSON_ID,
+    usuario: CLEWERTON_ID,
+    profissional: CLEWERTON_ID,
     minusDays: 3,
     hour: "17:30"
   },
