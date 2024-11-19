@@ -14,15 +14,15 @@ const USERS = [
     minusDays: 3,
     hour: "09:00",
   },
-  {
-    name: "Milton Alves",
-    id: "0ee54281f50a0accd61d7eb77294f983",
-    cliente: "7006215",
-    usuario: CLEWERTON_ID,
-    profissional: CLEWERTON_ID,
-    minusDays: 3,
-    hour: "17:30"
-  },
+  // {
+  //   name: "Milton Alves",
+  //   id: "0ee54281f50a0accd61d7eb77294f983",
+  //   cliente: "7006215",
+  //   usuario: CLEWERTON_ID,
+  //   profissional: CLEWERTON_ID,
+  //   minusDays: 3,
+  //   hour: "17:30"
+  // },
 ];
 
 export async function POST(req) {
