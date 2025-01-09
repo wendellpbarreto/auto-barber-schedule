@@ -12,7 +12,7 @@ const USERS = [
     usuario: HUDSON_ID,
     profissional: HUDSON_ID,
     minusDays: 3,
-    hour: "09:00",
+    hour: "18:00",
   },
   // {
   //   name: "Milton Alves",
