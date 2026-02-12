@@ -28,4 +28,4 @@ jobs:
           CASHBARBER_AGE_ID_FILIAL: ${{ secrets.CASHBARBER_AGE_ID_FILIAL }}
           CASHBARBER_AGE_ID_USER: ${{ secrets.CASHBARBER_AGE_ID_USER }}
           CASHBARBER_SERVICOS: ${{ secrets.CASHBARBER_SERVICOS }}
-        run: node scripts/book.js
+        run: npm run book
