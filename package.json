@@ -4,7 +4,8 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "book": "node scripts/book.js"
+    "book": "node scripts/book.js",
+    "book:local": "node --env-file=.env.local scripts/book.js"
   },
   "dependencies": {
     "luxon": "^3.3.0"
