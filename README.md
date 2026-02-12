@@ -28,12 +28,15 @@ Copie `.env.example` para `.env` e preencha (nunca commite `.env`):
 | `CASHBARBER_AGE_ID_FILIAL` | Não         | ID da filial (padrão: 3483)                                                                 |
 | `CASHBARBER_AGE_ID_USER`   | Não         | Não usado no agendamento; barbeiro é por dia: Ter/Qui = Lucas (21185), Sáb = Hudson (21218) |
 | `CASHBARBER_SERVICOS`      | Não         | IDs dos serviços separados por vírgula (padrão: 50954,50952)                                |
-| `CASHBARBER_BOOK_DELAY_MS` | Não         | Delay em ms entre tentativas (padrão: 3000)                                                 |
+| `CASHBARBER_BOOK_DELAY_MS` | Não         | Delay em ms entre tentativas (padrão: 3000)                                                   |
 
 ## Uso local
 
-- **API**: `POST /api/cashbarber/book` (com env configurado). Ex.: `curl -X POST http://localhost:3033/api/cashbarber/book`
-- **Script**: `node scripts/book.js` (defina as variáveis no ambiente ou use um `.env` carregado por outro meio).
+```bash
+npm run book
+```
+
+Ou: `node scripts/book.js` (defina as variáveis no ambiente ou use um `.env` carregado por outro meio).
 
 ## GitHub Actions
 
@@ -47,21 +50,3 @@ Configure os **secrets** do repositório em Settings → Secrets and variables �
 - `CASHBARBER_EMAIL` (obrigatório)
 - `CASHBARBER_PASSWORD` (obrigatório)
 - `CASHBARBER_AGE_ID_FILIAL`, `CASHBARBER_AGE_ID_USER`, `CASHBARBER_SERVICOS` (opcionais; sem eles usam os padrões acima).
-
-## Deploy (Vercel)
-
-Se fizer deploy da API, defina as mesmas variáveis em Vercel (Settings → Environment Variables) e pode acionar o agendamento com `POST https://seu-app.vercel.app/api/cashbarber/book` (por exemplo a partir de um cron externo).
-
----
-
-## Getting Started (Next.js)
-
-```bash
-npm run dev
-```
-
-Dev server em [http://localhost:3033](http://localhost:3033).
-
-## Deploy on Vercel
-
-[Vercel Platform](https://vercel.com/new) – documentação em [Next.js deployment](https://nextjs.org/docs/deployment).
