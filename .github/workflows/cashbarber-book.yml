@@ -1,31 +1,27 @@
-name: CashBarber book
+name: Book CashBarber
 
 on:
-  schedule:
-    # 06:00 UTC = 03:00 BRT (madrugada)
-    - cron: "0 6 * * *"
   workflow_dispatch:
+  schedule:
+    - cron: "0 3 * * *" # 00:00 America/Sao_Paulo (UTC-3)
 
 jobs:
   book:
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v4
 
-      - name: Setup Node
-        uses: actions/setup-node@v4
+      - uses: actions/setup-node@v4
         with:
-          node-version: "20"
-          cache: "npm"
+          node-version: 20
 
-      - name: Install dependencies
-        run: npm ci
+      - run: npm ci
 
-      - name: Run booking script
+      - run: npm run book
         env:
           CASHBARBER_EMAIL: ${{ secrets.CASHBARBER_EMAIL }}
           CASHBARBER_PASSWORD: ${{ secrets.CASHBARBER_PASSWORD }}
           CASHBARBER_AGE_ID_FILIAL: ${{ secrets.CASHBARBER_AGE_ID_FILIAL }}
           CASHBARBER_AGE_ID_USER: ${{ secrets.CASHBARBER_AGE_ID_USER }}
           CASHBARBER_SERVICOS: ${{ secrets.CASHBARBER_SERVICOS }}
-        run: npm run book
